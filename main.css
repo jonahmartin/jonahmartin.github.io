@@ -1,3 +1,148 @@
+/*global variables within CSS for colours*/
+:root {
+  /*main colours*/
+  --foregroundColour: lightgray;
+  --backgroundColour: #3e3e42;
+  --headerColour: #252526;
+
+  /*tabs*/
+  --tabColour: #123456;
+  --tabFocus: #0e2741;
+
+  /*for background of titles on lightgray (& header text)*/
+  --foregroundTitleColour: darkgray;
+}
+
+/*Common CSS to all pages*/
 body {
-  background: blue;
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--backgroundColour);
+}
+h1 {
+  background: var(--headerColour);
+  color: var(--foregroundTitleColour);
+  text-align: center;
+  padding: 20px;
+  margin-top: 0px;
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+}
+button,
+input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*basic tabs/header CSS on all pages - for specifics add an id*/
+.tabsHeader {
+  margin-top: 0px;
+  width: 100vw;
+  max-width: 99.999vw;
+  display: flex;
+  justify-content: space-between;
+}
+.tab {
+  margin-top: 0px;
+  flex: 1;
+  text-align: center;
+  font-size: 2rem;
+  padding: 15px;
+  font-weight: bold;
+  box-sizing: border-box;
+  border-right: 1px solid;
+  background: var(--tabColour);
+}
+.tabsHeader :last-child {
+  border-right: 0px;
+}
+.tab:hover {
+  background: var(--tabFocus);
+  cursor: pointer;
+}
+.selected {
+  background: var(--tabFocus);
+}
+#logOut {
+  display: flex;
+  float: right;
+  margin-top: -35px;
+  margin-right: 25px;
+  font-size: 1.25rem;
+  /* background-color: #8a2be2; */
+  background-color: #4e1285;
+  border: none;
+  border-radius: 5px;
+}
+#logOut:hover {
+  background: #441074;
+  cursor: pointer;
+}
+/*Login Page*/
+#loginFormTitle {
+  text-align: center;
+  background-color: var(--foregroundTitleColour);
+  margin: 0px;
+  border-radius: 10px 10px 0px 0px;
+  padding: 15px;
+  font-size: 2rem;
+}
+#login {
+  background: var(--foregroundColour);
+  border: 2px solid;
+  border-radius: 10px;
+  width: 30%;
+  height: 400px;
+  margin: auto;
+  margin-top: 5%;
+}
+.loginElement {
+  display: block;
+  margin: 10px;
+  margin-left: 20%;
+}
+#btnLogIn {
+  display: flex;
+  margin: auto;
+  font-size: 1.15rem;
+}
+#error {
+  font-size: 1.5rem;
+  display: inline;
+}
+#error:hover {
+  cursor: pointer;
+}
+#errorMessage {
+  display: none;
+}
+#error:hover + #errorMessage {
+  display: block;
+  margin-left: 45%;
+  color: red;
+}
+.hidden {
+  display: none;
+}
+
+/*login effects*/
+#chkPasswordVisibility:hover + label {
+  font-weight: bold;
+}
+.loginElement label,
+.loginElement input {
+  font-size: 1.25rem;
+}
+#btnLogIn {
+  margin-top: 45px;
+  font-size: 1.75rem;
+  padding: 5px;
+}
+#lblShowPassword {
+  font-size: 1rem;
+}
+#usernameContainer {
+  margin-top: 50px;
+}
+#passwordContainer {
+  margin-top: 25px;
 }
